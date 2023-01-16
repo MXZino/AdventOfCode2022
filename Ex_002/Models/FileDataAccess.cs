@@ -1,4 +1,4 @@
-﻿namespace Ex_001.Models;
+﻿namespace Ex_002.Models;
 
 public class FileDataAccess : DataAccessBase
 {

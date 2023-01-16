@@ -4,7 +4,7 @@ namespace Ex_001.Models;
 
 public abstract class DataAccessBase : IDataAccess
 {
-    public abstract string FilePath { get; }
+    protected abstract string FilePath { get; }
     
     public IEnumerable<Elf> ReadElves()
     {

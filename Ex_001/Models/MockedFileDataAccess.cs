@@ -2,5 +2,5 @@
 
 public class MockedFileDataAccess : DataAccessBase
 {
-    public override string FilePath => @"./assets/mocked_data.txt";
+    protected override string FilePath => @"./assets/mocked_data.txt";
 }
