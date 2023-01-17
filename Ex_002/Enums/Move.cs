@@ -2,7 +2,7 @@
 
 public enum Move
 {
+    Rock = 1,
     Paper,
-    Rock,
     Scissors
 }

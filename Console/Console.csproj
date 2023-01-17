@@ -4,11 +4,12 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Ex_001\Ex_001.csproj" />
+      <ProjectReference Include="..\Ex_002\Ex_002.csproj" />
     </ItemGroup>
 
 </Project>

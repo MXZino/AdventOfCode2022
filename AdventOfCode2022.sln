@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex_002", "Ex_002\Ex_002.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex_002.Tests", "Ex_002.Tests\Ex_002.Tests.csproj", "{CBEA3ED9-715D-4181-9705-EEF70F8D1DF1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C5797964-0C54-4D36-A1A5-A8991F0C631E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{CBEA3ED9-715D-4181-9705-EEF70F8D1DF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBEA3ED9-715D-4181-9705-EEF70F8D1DF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBEA3ED9-715D-4181-9705-EEF70F8D1DF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9A7D9FE9-B977-4999-9D3D-D700E675F8F7} = {C5797964-0C54-4D36-A1A5-A8991F0C631E}
+		{CBEA3ED9-715D-4181-9705-EEF70F8D1DF1} = {C5797964-0C54-4D36-A1A5-A8991F0C631E}
 	EndGlobalSection
 EndGlobal

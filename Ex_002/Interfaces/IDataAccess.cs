@@ -4,5 +4,5 @@ namespace Ex_002.Interfaces;
 
 public interface IDataAccess
 {
-    Tuple<Player, Player> ReadPlayers();
+    Tuple<Player, Player> ReadDataAsMoves();
 }
