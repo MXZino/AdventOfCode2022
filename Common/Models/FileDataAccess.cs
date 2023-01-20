@@ -1,8 +1,6 @@
-﻿using Common.Interfaces;
+﻿namespace Common.Models;
 
-namespace Common.Models;
-
-public class FileDataAccess : IDataAccess
+public class FileDataAccess
 {
-    public IEnumerable<string> ReadFile(string path) => File.ReadLines(path);
+    public static IEnumerable<string> ReadFile(string path) => File.ReadLines(path);
 }

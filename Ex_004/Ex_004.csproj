@@ -1,18 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>Exe</OutputType>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="assets\data.txt" />
+      <Content Include="assets\data.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\Common\Common.csproj" />
-      <ProjectReference Include="..\Ex_001\Ex_001.csproj" />
-      <ProjectReference Include="..\Ex_002\Ex_002.csproj" />
-      <ProjectReference Include="..\Ex_003\Ex_003.csproj" />
-      <ProjectReference Include="..\Ex_004\Ex_004.csproj" />
     </ItemGroup>
 
 </Project>

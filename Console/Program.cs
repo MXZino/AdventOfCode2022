@@ -1,11 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Common.Interfaces;
-using Common.Models;
-
-IDataAccess dataAccess = new FileDataAccess();
-
-var dataLines = dataAccess.ReadFile(@"./assets/data.txt");
+using Ex_004;
+using Ex_004.Interfaces;
 
 #region Ex001
 
@@ -74,5 +70,16 @@ var dataLines = dataAccess.ReadFile(@"./assets/data.txt");
 //
 // Console.WriteLine(total);
 // Console.WriteLine(groupsRepeatedItemsTotal);
+
+#endregion
+
+#region Ex004
+
+
+
+IEx004Facade ex004Facade = new Ex004Ex004Facade(@"./assets/data.txt");
+
+Console.WriteLine($"Fully contained sectors: {ex004Facade.CountFullyContainedSectors()}");
+Console.WriteLine($"Overlapping assignments: {ex004Facade.CountOverlappingAssignments()}");
 
 #endregion
