@@ -36,7 +36,7 @@ public class Tests
     [Test]
     public void CountFullyContainedSectors_Is1_ReturnTrue()
     {
-        IEx004Facade facade = new Ex004Ex004Facade(@"./assets/test_data.txt");
+        IEx004Facade facade = new Ex004Facade(@"./assets/test_data.txt");
         Assert.That(facade.CountFullyContainedSectors(), Is.EqualTo(1));
     }
 
@@ -52,7 +52,7 @@ public class Tests
     [Test]
     public void CountOverlappingAssignments_Is1_ReturnTrue()
     {
-        IEx004Facade facade = new Ex004Ex004Facade(@"./assets/test_data.txt");
+        IEx004Facade facade = new Ex004Facade(@"./assets/test_data.txt");
         Assert.That(facade.CountOverlappingAssignments(), Is.EqualTo(1));
     }
 }

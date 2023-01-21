@@ -5,20 +5,15 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
     </PropertyGroup>
-
-    <ItemGroup>
-      <None Remove="assets\data.txt" />
-    </ItemGroup>
-
+    
     <ItemGroup>
       <ProjectReference Include="..\Common\Common.csproj" />
     </ItemGroup>
-
+    
     <ItemGroup>
-      <None Remove="assets\exercise_004_data.txt" />
-      <Content Include="assets\exercise_004_data.txt">
+      <None Update="assets\exercise_005_data.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
+      </None>
     </ItemGroup>
 
 </Project>

@@ -2,6 +2,8 @@
 
 using Ex_004;
 using Ex_004.Interfaces;
+using Ex_005;
+using Ex_005.Interfaces;
 
 #region Ex001
 
@@ -75,11 +77,19 @@ using Ex_004.Interfaces;
 
 #region Ex004
 
-
-
-IEx004Facade ex004Facade = new Ex004Ex004Facade(@"./assets/data.txt");
+IEx004Facade ex004Facade = new Ex004Facade(@"./assets/exercise_004_data.txt");
 
 Console.WriteLine($"Fully contained sectors: {ex004Facade.CountFullyContainedSectors()}");
 Console.WriteLine($"Overlapping assignments: {ex004Facade.CountOverlappingAssignments()}");
+
+#endregion
+
+#region Ex005
+
+IEx005Facade ex005Facade = new Ex005Facade(@"./assets/exercise_005_data.txt");
+Console.WriteLine($"Top values of ship: {ex005Facade.GetValuesFromTopOfShip()}");
+
+ex005Facade = new Ex005Facade(@"./assets/exercise_005_data.txt");
+Console.WriteLine($"Top values of ship: {ex005Facade.GetValuesFromTopOfShipWithAdvancedMove()}");
 
 #endregion
