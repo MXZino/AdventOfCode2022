@@ -4,6 +4,8 @@ using Ex_004;
 using Ex_004.Interfaces;
 using Ex_005;
 using Ex_005.Interfaces;
+using Ex_006;
+using Ex_006.Interfaces;
 
 #region Ex001
 
@@ -91,5 +93,17 @@ Console.WriteLine($"Top values of ship: {ex005Facade.GetValuesFromTopOfShip()}")
 
 ex005Facade = new Ex005Facade(@"./assets/exercise_005_data.txt");
 Console.WriteLine($"Top values of ship: {ex005Facade.GetValuesFromTopOfShipWithAdvancedMove()}");
+
+#endregion
+
+#region Ex006
+
+Console.WriteLine();
+Console.WriteLine("Exercise 6");
+Console.WriteLine();
+
+IEx006Facade ex006Facade = new Ex006Facade(@"./assets/006_data.txt");
+Console.WriteLine($"Begin packet position: {ex006Facade.GetBeginPacketPosition()}");
+Console.WriteLine($"Begin message position: {ex006Facade.GetStartOfMessagePosition()}");
 
 #endregion
