@@ -6,6 +6,8 @@ using Ex_005;
 using Ex_005.Interfaces;
 using Ex_006;
 using Ex_006.Interfaces;
+using Ex_007;
+using Ex_007.Interfaces;
 
 #region Ex001
 
@@ -106,4 +108,15 @@ IEx006Facade ex006Facade = new Ex006Facade(@"./assets/006_data.txt");
 Console.WriteLine($"Begin packet position: {ex006Facade.GetBeginPacketPosition()}");
 Console.WriteLine($"Begin message position: {ex006Facade.GetStartOfMessagePosition()}");
 
+#endregion
+
+#region Ex007
+
+Console.WriteLine();
+Console.WriteLine("Exercise 7");
+Console.WriteLine();
+
+IEx007Facade ex007Facade = new Ex007Facade(@"./assets/007_data.txt");
+Console.WriteLine($"Sum of the total sizes directories with size at most 100000: {ex007Facade.RootDirectory.GetSize(100000)}");
+Console.WriteLine($"Size of directory to delete: {ex007Facade.GetSizeOfDirectoryToDelete()}");
 #endregion
