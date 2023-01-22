@@ -8,6 +8,8 @@ using Ex_006;
 using Ex_006.Interfaces;
 using Ex_007;
 using Ex_007.Interfaces;
+using Ex_008;
+using Ex_008.Interfaces;
 
 #region Ex001
 
@@ -119,4 +121,15 @@ Console.WriteLine();
 IEx007Facade ex007Facade = new Ex007Facade(@"./assets/007_data.txt");
 Console.WriteLine($"Sum of the total sizes directories with size at most 100000: {ex007Facade.RootDirectory.GetSize(100000)}");
 Console.WriteLine($"Size of directory to delete: {ex007Facade.GetSizeOfDirectoryToDelete()}");
+#endregion
+
+#region Ex008
+
+Console.WriteLine();
+Console.WriteLine("Exercise 8");
+Console.WriteLine();
+
+IEx008Facade ex008Facade = new Ex008Facade(@"./assets/008_data.txt");
+Console.WriteLine($"Sum of visible trees: {ex008Facade.CountVisibleTrees()}");
+Console.WriteLine($"Possible highest scenic score: {ex008Facade.GetHighestScenicScore()}");
 #endregion
