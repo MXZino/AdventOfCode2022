@@ -10,6 +10,8 @@ using Ex_007;
 using Ex_007.Interfaces;
 using Ex_008;
 using Ex_008.Interfaces;
+using Ex_009;
+using Ex_009.Interfaces;
 
 #region Ex001
 
@@ -132,4 +134,20 @@ Console.WriteLine();
 IEx008Facade ex008Facade = new Ex008Facade(@"./assets/008_data.txt");
 Console.WriteLine($"Sum of visible trees: {ex008Facade.CountVisibleTrees()}");
 Console.WriteLine($"Possible highest scenic score: {ex008Facade.GetHighestScenicScore()}");
+#endregion
+
+#region Ex009
+
+Console.WriteLine();
+Console.WriteLine("Exercise 9");
+Console.WriteLine();
+
+IEx009Facade ex009Facade = new Ex009Facade(@"./assets/009_data.txt", 2);
+ex009Facade.PerformMoves();
+Console.WriteLine($"Count of unique positions with 2 knots: {ex009Facade.CountTailUniquePositions()}");
+
+ex009Facade = new Ex009Facade(@"./assets/009_data.txt", 10);
+ex009Facade.PerformMoves();
+Console.WriteLine($"Count of unique positions with 10 knots: {ex009Facade.CountTailUniquePositions()}");
+
 #endregion
