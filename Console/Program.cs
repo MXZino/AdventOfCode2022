@@ -12,6 +12,8 @@ using Ex_008;
 using Ex_008.Interfaces;
 using Ex_009;
 using Ex_009.Interfaces;
+using Ex_010;
+using Ex_010.Interfaces;
 
 #region Ex001
 
@@ -149,5 +151,28 @@ Console.WriteLine($"Count of unique positions with 2 knots: {ex009Facade.CountTa
 ex009Facade = new Ex009Facade(@"./assets/009_data.txt", 10);
 ex009Facade.PerformMoves();
 Console.WriteLine($"Count of unique positions with 10 knots: {ex009Facade.CountTailUniquePositions()}");
+
+#endregion
+
+#region Ex010
+
+Console.WriteLine();
+Console.WriteLine("Exercise 10");
+Console.WriteLine();
+
+IEx010Facade ex010Facade = new Ex010Facade(@"./assets/010_data.txt");
+Console.WriteLine($"Sum of signal strength: {ex010Facade.GetSumOfSignalStrength(new[] {20, 60, 100, 140, 180, 220})}");
+
+ex010Facade = new Ex010Facade(@"./assets/010_data.txt");
+var pixels = ex010Facade.ProduceImage().ToArray();
+
+Console.WriteLine("CRT:");
+
+Console.WriteLine(new string(pixels.Take(40).ToArray()));
+Console.WriteLine(new string(pixels.Skip(40).Take(40).ToArray()));
+Console.WriteLine(new string(pixels.Skip(80).Take(40).ToArray()));
+Console.WriteLine(new string(pixels.Skip(120).Take(40).ToArray()));
+Console.WriteLine(new string(pixels.Skip(160).Take(40).ToArray()));
+Console.WriteLine(new string(pixels.Skip(200).Take(40).ToArray()));
 
 #endregion
