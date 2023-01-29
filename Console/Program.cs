@@ -14,6 +14,9 @@ using Ex_009;
 using Ex_009.Interfaces;
 using Ex_010;
 using Ex_010.Interfaces;
+using Ex_011;
+using Ex_011.Helpers;
+using Ex_011.Interfaces;
 
 #region Ex001
 
@@ -174,5 +177,20 @@ Console.WriteLine(new string(pixels.Skip(80).Take(40).ToArray()));
 Console.WriteLine(new string(pixels.Skip(120).Take(40).ToArray()));
 Console.WriteLine(new string(pixels.Skip(160).Take(40).ToArray()));
 Console.WriteLine(new string(pixels.Skip(200).Take(40).ToArray()));
+
+#endregion
+
+#region Ex011
+
+Console.WriteLine();
+Console.WriteLine("Exercise 11");
+Console.WriteLine();
+
+IEx011Facade ex011Facade = new Ex011Facade(MonkeysInitializer.Initialize(), true);
+ex011Facade.PerformRounds(20);
+Console.WriteLine($"Level of monkey business: {ex011Facade.GetLevelOfMonkeyBusiness()}");
+ex011Facade = new Ex011Facade(MonkeysInitializer.Initialize(), false);
+ex011Facade.PerformRounds(10000);
+Console.WriteLine($"Level of monkey business: {ex011Facade.GetLevelOfMonkeyBusiness()}");
 
 #endregion
