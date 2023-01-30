@@ -20,6 +20,7 @@
       <ProjectReference Include="..\Ex_009\Ex_009.csproj" />
       <ProjectReference Include="..\Ex_010\Ex_010.csproj" />
       <ProjectReference Include="..\Ex_011\Ex_011.csproj" />
+      <ProjectReference Include="..\Ex_012\Ex_012.csproj" />
     </ItemGroup>
 
 </Project>

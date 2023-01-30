@@ -17,6 +17,8 @@ using Ex_010.Interfaces;
 using Ex_011;
 using Ex_011.Helpers;
 using Ex_011.Interfaces;
+using Ex_012;
+using Ex_012.Interfaces;
 
 #region Ex001
 
@@ -192,5 +194,17 @@ Console.WriteLine($"Level of monkey business: {ex011Facade.GetLevelOfMonkeyBusin
 ex011Facade = new Ex011Facade(MonkeysInitializer.Initialize(), false);
 ex011Facade.PerformRounds(10000);
 Console.WriteLine($"Level of monkey business: {ex011Facade.GetLevelOfMonkeyBusiness()}");
+
+#endregion
+
+#region Ex012
+
+Console.WriteLine();
+Console.WriteLine("Exercise 12");
+Console.WriteLine();
+
+IEx012Facade ex012Facade = new Ex012Facade(@"./assets/012_data.txt");
+ex012Facade.FindShortestWay();
+Console.WriteLine($"Lowest number of steps: {ex012Facade.GetSteps()}");
 
 #endregion
