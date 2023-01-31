@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Diagnostics;
 using Ex_004;
 using Ex_004.Interfaces;
 using Ex_005;
@@ -206,5 +207,10 @@ Console.WriteLine();
 IEx012Facade ex012Facade = new Ex012Facade(@"./assets/012_data.txt");
 ex012Facade.FindShortestWay();
 Console.WriteLine($"Lowest number of steps: {ex012Facade.GetSteps()}");
+
+var start = Stopwatch.GetTimestamp();
+
+Console.WriteLine($"Lowest number of steps from a: {ex012Facade.GetStepsFromA()}");
+Console.WriteLine(Stopwatch.GetElapsedTime(start));
 
 #endregion

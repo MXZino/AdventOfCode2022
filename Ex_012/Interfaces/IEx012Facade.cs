@@ -4,4 +4,5 @@ public interface IEx012Facade
 {
     void FindShortestWay();
     int GetSteps();
+    int GetStepsFromA();
 }

@@ -1,4 +1,5 @@
-﻿using Common.Models;
+﻿using System.Diagnostics;
+using Common.Models;
 using Ex_012.Interfaces;
 using Ex_012.Models;
 
@@ -19,20 +20,24 @@ public class Ex012Facade : IEx012Facade
 
     public void FindShortestWay()
     {
-        _fields.First(x => x.Value == 'S').CostOfWay = 0;
-        var endField = _fields.First(x => x.Value == 'E');
-        
+        var startingField = _fields.First(x => x.Value == 'S');
+        FindShortestWay(startingField);
+    }
+
+    private void FindShortestWay(Field startingField)
+    {
+        startingField.CostOfWay = 0;
+
         while (_fields.Any(x => !x.Inspected))
         {
-            var inspectedField = _fields.Where(x=> !x.Inspected).OrderBy(x => x.CostOfWay).First();
+            var inspectedField = _fields.Where(x => !x.Inspected).OrderBy(x => x.CostOfWay).First();
             inspectedField.Inspected = true;
-            
-            if(inspectedField.Value == 'E')
+
+            if (inspectedField.Value == 'E')
                 continue;
-            
+
             foreach (var neighbour in inspectedField.AvailableFields.Where(x => !x.Inspected))
             {
-                
                 if (neighbour.CostOfWay > inspectedField.CostOfWay + 1)
                 {
                     neighbour.CostOfWay = inspectedField.CostOfWay + 1;
@@ -43,7 +48,31 @@ public class Ex012Facade : IEx012Facade
     }
 
     public int GetSteps() => _fields.First(x => x.Value == 'E').CostOfWay;
-    
+
+    public int GetStepsFromA()
+    {
+        Parallel.ForEach(_fields, field =>
+        {
+            field.Reset();
+        });
+
+        var aFields = _fields.Where(x => x.Value == 'a').ToArray();
+        
+        return aFields.Select(GetStepsFromA).Min();
+    }
+
+    private int GetStepsFromA(Field startingField)
+    {
+        
+        Parallel.ForEach(_fields, field =>
+        {
+            field.Reset();
+        });
+        
+        FindShortestWay(startingField);
+        return GetSteps();
+    }
+
     private IEnumerable<Field> InitializeFields(IEnumerable<string> dataLines)
     {
         var dataLinesArray = dataLines.ToArray();
@@ -74,7 +103,6 @@ public class Ex012Facade : IEx012Facade
         }
     }
 
-    private void InitializeAvailableFields() => 
+    private void InitializeAvailableFields() =>
         Parallel.ForEach(_fields, field => { field.SetAvailableFields(_fields, _rows, _columns); });
-    
 }

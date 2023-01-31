@@ -18,4 +18,10 @@ public class Tests
         _facade.FindShortestWay();
         Assert.That(_facade.GetSteps(), Is.EqualTo(31));
     }
+
+    [Test]
+    public void GetStepsFromA_Is29_ReturnTrue()
+    {
+        Assert.That(_facade.GetStepsFromA(), Is.EqualTo(29));
+    }
 }

@@ -58,4 +58,11 @@ public class Field
 
     private Field GetTopNeighbour(IEnumerable<Field> allFields) =>
         allFields.First(x => x.Row == Row - 1 && x.Column == Column);
+
+    public void Reset()
+    {
+        Inspected = false;
+        CostOfWay = 100000;
+        PreviousField = null;
+    }
 }
