@@ -20,6 +20,8 @@ using Ex_011.Helpers;
 using Ex_011.Interfaces;
 using Ex_012;
 using Ex_012.Interfaces;
+using Ex_013;
+using Ex_013.Interfaces;
 
 #region Ex001
 
@@ -205,12 +207,21 @@ Console.WriteLine("Exercise 12");
 Console.WriteLine();
 
 IEx012Facade ex012Facade = new Ex012Facade(@"./assets/012_data.txt");
-ex012Facade.FindShortestWay();
-Console.WriteLine($"Lowest number of steps: {ex012Facade.GetSteps()}");
+// ex012Facade.FindShortestWay();
+// Console.WriteLine($"Lowest number of steps: {ex012Facade.GetSteps()}");
+// Console.WriteLine($"Lowest number of steps from a: {ex012Facade.GetStepsFromA()}");
 
-var start = Stopwatch.GetTimestamp();
 
-Console.WriteLine($"Lowest number of steps from a: {ex012Facade.GetStepsFromA()}");
-Console.WriteLine(Stopwatch.GetElapsedTime(start));
+#endregion
+
+#region Ex013
+
+Console.WriteLine();
+Console.WriteLine("Exercise 13");
+Console.WriteLine();
+
+IEx013Facade ex013Facade = new Ex013Facade(@"./assets/013_data.txt");
+Console.WriteLine($"Sum of the indices: {ex013Facade.SumOfIndicesOfOrderedPairs()}");
+
 
 #endregion
