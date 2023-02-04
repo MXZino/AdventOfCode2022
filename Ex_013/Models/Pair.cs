@@ -13,8 +13,6 @@ public class Pair
 
     private bool CompareGroups()
     {
-        var result = FirstGroup.CompareGroup(SecondGroup);
-
-        return result is null || result.Value;
+        return FirstGroup > SecondGroup;
     }
 }

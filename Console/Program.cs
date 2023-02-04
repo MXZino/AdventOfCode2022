@@ -222,6 +222,6 @@ Console.WriteLine();
 
 IEx013Facade ex013Facade = new Ex013Facade(@"./assets/013_data.txt");
 Console.WriteLine($"Sum of the indices: {ex013Facade.SumOfIndicesOfOrderedPairs()}");
-
+Console.WriteLine($"Decoder key: {ex013Facade.GetDecoderKey()}");
 
 #endregion

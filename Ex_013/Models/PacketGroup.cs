@@ -2,16 +2,19 @@
 
 namespace Ex_013.Models;
 
-public class PacketGroup : IPacket
+public class PacketGroup : IPacket, IComparable<PacketGroup>
 {
     public List<IPacket> Packets { get; } = new();
-    public PacketGroup Parent { get; set; }
+    public bool IsDividerPacket { get; }
 
-    public PacketGroup(){}
-    public PacketGroup(ref string dataLine, PacketGroup parent = null)
+    public PacketGroup()
     {
-        Parent = parent;
+    }
 
+    public PacketGroup(ref string dataLine, bool isDividerPacket = false)
+    {
+        IsDividerPacket = isDividerPacket;
+        
         dataLine = dataLine[1..];
 
         while (!string.IsNullOrWhiteSpace(dataLine))
@@ -19,7 +22,7 @@ public class PacketGroup : IPacket
             switch (dataLine.First())
             {
                 case '[':
-                    Packets.Add(new PacketGroup(ref dataLine, this));
+                    Packets.Add(new PacketGroup(ref dataLine));
                     break;
 
                 case ']':
@@ -57,16 +60,16 @@ public class PacketGroup : IPacket
         };
     }
 
-    
+
     public bool? CompareGroup(PacketGroup groupToCompare)
     {
         var groupToComparePacketSize = groupToCompare.Packets.Count;
-        
+
         for (var i = 0; i < Packets.Count; i++)
         {
             if (i == groupToComparePacketSize)
                 return false;
-            
+
             var rightOrder = Packets.ElementAt(i).Compare(groupToCompare.Packets.ElementAt(i));
             if (rightOrder != null)
                 return rightOrder;
@@ -74,7 +77,7 @@ public class PacketGroup : IPacket
 
         if (Packets.Count < groupToComparePacketSize)
             return true;
-        
+
         return null;
     }
 
@@ -86,5 +89,25 @@ public class PacketGroup : IPacket
         };
 
         return CompareGroup(wrappedPacket);
+    }
+
+    public static bool operator <(PacketGroup first, PacketGroup second)
+    {
+        var comparer = new PacketGroupComparer();
+
+        return comparer.Compare(first, second) != 1;
+    }
+    
+    public static bool operator >(PacketGroup first, PacketGroup second)
+    {
+        var comparer = new PacketGroupComparer();
+
+        return comparer.Compare(first, second) == 1;
+    }
+
+    public int CompareTo(PacketGroup other)
+    {
+        var comparer = new PacketGroupComparer();
+        return comparer.Compare(this, other);
     }
 }

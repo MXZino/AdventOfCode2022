@@ -15,4 +15,8 @@ public class Tests
     [Test]
     public void SumOfIndicesOfOrderedPairs_Is13_ReturnTrue() => 
         Assert.That(_facade.SumOfIndicesOfOrderedPairs(), Is.EqualTo(13));
+    
+    [Test]
+    public void GetDecoderKey_Is140_ReturnTrue() =>
+        Assert.That(_facade.GetDecoderKey(), Is.EqualTo(140));
 }

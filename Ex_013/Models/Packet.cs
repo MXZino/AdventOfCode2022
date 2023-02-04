@@ -4,12 +4,10 @@ namespace Ex_013.Models;
 
 public class Packet : IPacket
 {
-    public PacketGroup Parent { get; set; }
     public int Value { get; }
 
     public Packet(string stringValue, PacketGroup parent)
     {
-        Parent = parent;
         Value = int.Parse(stringValue);
     }
 

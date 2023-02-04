@@ -41,4 +41,30 @@ public class Ex013Facade : IEx013Facade
 
         return sum;
     }
+
+    public int GetDecoderKey()
+    {
+        var packetGroups = _pairs
+            .Select(x => x.FirstGroup)
+            .Concat(_pairs
+                .Select(x => x.SecondGroup))
+            .ToList();
+
+        var dividerPackets = new[] {"[[2]]", "[[6]]"};
+        
+        packetGroups.Add(new PacketGroup(ref dividerPackets[0], true));
+        packetGroups.Add(new PacketGroup(ref dividerPackets[1], true));
+
+        var orderedPackets = packetGroups.OrderDescending().ToList();
+
+        var decoderKey = 1;
+
+        for (var i = 0; i < orderedPackets.Count; i++)
+        {
+            if (orderedPackets[i].IsDividerPacket)
+                decoderKey *= i + 1;
+        }
+
+        return decoderKey;
+    }
 }

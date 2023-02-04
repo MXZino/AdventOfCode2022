@@ -3,4 +3,5 @@
 public interface IEx013Facade
 {
     int SumOfIndicesOfOrderedPairs();
+    int GetDecoderKey();
 }
