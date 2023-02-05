@@ -22,6 +22,7 @@
       <ProjectReference Include="..\Ex_011\Ex_011.csproj" />
       <ProjectReference Include="..\Ex_012\Ex_012.csproj" />
       <ProjectReference Include="..\Ex_013\Ex_013.csproj" />
+      <ProjectReference Include="..\Ex_014\Ex_014.csproj" />
     </ItemGroup>
 
 </Project>

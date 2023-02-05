@@ -22,6 +22,8 @@ using Ex_012;
 using Ex_012.Interfaces;
 using Ex_013;
 using Ex_013.Interfaces;
+using Ex_014;
+using Ex_014.Interfaces;
 
 #region Ex001
 
@@ -224,4 +226,16 @@ IEx013Facade ex013Facade = new Ex013Facade(@"./assets/013_data.txt");
 Console.WriteLine($"Sum of the indices: {ex013Facade.SumOfIndicesOfOrderedPairs()}");
 Console.WriteLine($"Decoder key: {ex013Facade.GetDecoderKey()}");
 
+#endregion
+
+#region Ex014
+
+Console.WriteLine();
+Console.WriteLine("Exercise 14");
+Console.WriteLine();
+
+IEx014Facade ex014Facade = new Ex014Facade(@"./assets/014_data.txt");
+Console.WriteLine($"Units of sand: {ex014Facade.GetUnitsOfSand()}");
+ex014Facade = new Ex014Facade(@"./assets/014_data.txt");
+Console.WriteLine($"Units of sand with floor: {ex014Facade.GetUnitsOfSandWithFloor()}");
 #endregion
