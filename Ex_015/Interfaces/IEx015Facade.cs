@@ -3,4 +3,5 @@
 public interface IEx015Facade
 {
     int GetPositionsWithoutBeacon(int y);
+    ulong GetBeaconTuningFrequency();
 }

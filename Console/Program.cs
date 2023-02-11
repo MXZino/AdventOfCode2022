@@ -250,5 +250,5 @@ Console.WriteLine();
 
 IEx015Facade ex015Facade = new Ex015Facade(@"./assets/015_data.txt");
 Console.WriteLine($"Positions without beacon: {ex015Facade.GetPositionsWithoutBeacon(2000000)}");
-
+Console.WriteLine($"Beacon Tuning Frequency: {ex015Facade.GetBeaconTuningFrequency()}");
 #endregion

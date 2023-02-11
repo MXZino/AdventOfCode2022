@@ -17,4 +17,11 @@ public class Tests
     {
         Assert.That(_facade.GetPositionsWithoutBeacon(10), Is.EqualTo(26));
     }
+    
+    [Test]
+    public void TestGetBeaconTuningFrequency_Is56000011_ReturnTrue()
+    {
+        _facade.GetBeaconTuningFrequency();
+        Assert.That(_facade.GetBeaconTuningFrequency(), Is.EqualTo(56000011));
+    }
 }
