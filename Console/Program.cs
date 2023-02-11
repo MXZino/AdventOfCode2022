@@ -24,6 +24,8 @@ using Ex_013;
 using Ex_013.Interfaces;
 using Ex_014;
 using Ex_014.Interfaces;
+using Ex_015;
+using Ex_015.Interfaces;
 
 #region Ex001
 
@@ -238,4 +240,15 @@ IEx014Facade ex014Facade = new Ex014Facade(@"./assets/014_data.txt");
 Console.WriteLine($"Units of sand: {ex014Facade.GetUnitsOfSand()}");
 ex014Facade = new Ex014Facade(@"./assets/014_data.txt");
 Console.WriteLine($"Units of sand with floor: {ex014Facade.GetUnitsOfSandWithFloor()}");
+#endregion
+
+#region Ex015
+
+Console.WriteLine();
+Console.WriteLine("Exercise 15");
+Console.WriteLine();
+
+IEx015Facade ex015Facade = new Ex015Facade(@"./assets/015_data.txt");
+Console.WriteLine($"Positions without beacon: {ex015Facade.GetPositionsWithoutBeacon(2000000)}");
+
 #endregion
